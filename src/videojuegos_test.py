@@ -1,3 +1,4 @@
+import csv
 from collections import namedtuple
 from platform import platform
 
