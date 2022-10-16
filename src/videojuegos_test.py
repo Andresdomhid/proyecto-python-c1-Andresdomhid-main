@@ -4,8 +4,7 @@ from platform import platform
 
 
 
-juego = namedtuple('juego', 
-'rank', 'name', 'platmform', 'year', 'genre', 'plublisher', 'NA_sales', 'EU_sales', 'JP_sales', 'other_sales', 'global_sales', 'critic_score', 'critic_count', 'user_score', 'user_count', 'rating')
+juego = namedtuple('juego', 'rank', 'name', 'platmform', 'year', 'genre', 'plublisher', 'NA_sales', 'EU_sales', 'JP_sales', 'other_sales', 'global_sales', 'critic_score', 'critic_count', 'user_score', 'user_count', 'rating')
 
 def lee_juegos(fichero):
     videojuegos = []
