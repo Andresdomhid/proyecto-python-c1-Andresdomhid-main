@@ -1,3 +1,3 @@
-import videojuegos
+from collections import namedtuple as nt
 
-print (videojuegos.lee_juegos)
+fichero = nt('nombre', ['apellido1', 'apellido2'])

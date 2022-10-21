@@ -1,9 +1,9 @@
 import csv
-from collections import namedtuple
+from collections import namedtuple as nt
 
 
 
-juego = namedtuple('juego', ['rank,name, platform, year, genre, publisher, NA_sales, EU_sales, JP_sales, other_sales, global_sales, critic_score, critic_count, user_score, user_count, rating'])
+videojuegos = nt('juego', ['rank,name, platform, year, genre, publisher, NA_sales, EU_sales, JP_sales, other_sales, global_sales, critic_score, critic_count, user_score, user_count, rating'])
 
 def lee_juegos(fichero):
     videojuegos = []
@@ -26,7 +26,8 @@ def lee_juegos(fichero):
             user_score = float(user_score)
             user_count = float(user_count)
             rating = bool(rating)
-            videojuegos.append(juego(rank,name, platform, year, genre, publisher, NA_sales, EU_sales, JP_sales, other_sales, global_sales, critic_score, critic_count, user_score, user_count, rating))
+            videojuegos.append(videojuegos(rank,name, platform, year, genre, publisher, NA_sales, EU_sales, JP_sales, other_sales, global_sales, critic_score, critic_count, user_score, user_count, rating))
     return videojuegos
 
 
+lee_juegos[1]
