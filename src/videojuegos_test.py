@@ -1,3 +1,5 @@
 from collections import namedtuple as nt
+from videojuegos import *
 
-fichero = nt('nombre', ['apellido1', 'apellido2'])
+
+print(lee_juegos('./data/Video_Game_Sales_as_of_Jan_2017.csv'))
