@@ -1,5 +1,4 @@
 from collections import namedtuple
 from videojuegos import *
 
-
-print(videojuegos)
+#lee_ficheros(videojuegos)
