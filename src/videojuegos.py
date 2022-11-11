@@ -28,3 +28,12 @@ with open('./data/Video_Game_Sales_as_of_Jan_2017.csv', encoding= 'utf-8') as f:
 
 def lee_ficheros(videojuegos):
     print(videojuegos)
+
+
+def filtra_por_plataforma(videojuegos, Platform):
+    filtradas = [(p, s) for p, s in videojuegos if p in Platform]
+    return filtradas
+
+
+
+
