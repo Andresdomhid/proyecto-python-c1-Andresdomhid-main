@@ -35,14 +35,10 @@ def calcula_plataformas(videojuegos):
     
 
 
-plataformas = calcula_plataformas(videojuegos)
+
 
 
 
 #def filtra_por_plataforma(videojuegos, Platform):
     #filtradas = [(p, s) for p, s in videojuegos if p in Platform]
     #return filtradas
-
-
-
-
