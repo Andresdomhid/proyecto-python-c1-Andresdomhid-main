@@ -49,3 +49,13 @@ def calcula_media_valoracion_por_juego(videojuegos, name):
             result.append(videojuego.Critic_Score)
             result.append(videojuego.User_Score)
     return sum(result)//len(result)
+
+
+
+
+#TERCERA FUNCION
+def valor_maximo_ventas_juegos_PS3(videojuegos, Platform):
+    result = []
+    for videojuego in videojuegos:
+        if videojuego.Platform == 'PS3':
+            calculado = 
