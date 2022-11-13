@@ -56,6 +56,19 @@ def calcula_media_valoracion_por_juego(videojuegos, name):
 #TERCERA FUNCION
 def valor_maximo_ventas_juegos_PS3(videojuegos, Platform):
     result = []
+    #for videojuego in videojuegos:
+        #if videojuego.Platform == 'PS3':
+            #calculado = 
+
+
+
+#CUARTA FUNCION
+def agrupar_videojuegos_por_anyo(videojuegos):
+    res = dict()
     for videojuego in videojuegos:
-        if videojuego.Platform == 'PS3':
-            calculado = 
+        clave = videojuego.Year_of_Release(2004)
+        if clave not in res:
+            res[clave] = [videojuego]
+        else:
+            res[clave].append(videojuego)
+    return res
