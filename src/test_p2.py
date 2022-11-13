@@ -4,5 +4,5 @@ from p2 import *
 
 #print(filtra_plataforma())
 
-calcula_media_valoracion_por_juego()
+#calcula_media_valoracion_por_juego()
 
