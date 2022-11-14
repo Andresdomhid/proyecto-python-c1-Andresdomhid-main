@@ -22,7 +22,7 @@ def lee_datos(Nombre_fichero):
             Critic_Count = str(Listado[11])
             User_Score = str(Listado[12])
             User_Count = str(Listado[13])
-            Rating = bool(Listado[14])
+            Rating = bool(Listado[14]=='E')
             tupla = Videojuego(Name,Platform,Year_of_Release,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales,Critic_Score,Critic_Count,User_Score,User_Count,Rating)
             result.append(tupla)
     return result
