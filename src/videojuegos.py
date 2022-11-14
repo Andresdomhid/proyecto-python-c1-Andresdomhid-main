@@ -24,7 +24,7 @@ with open('./data/Video_Game_Sales_as_of_Jan_2017.csv', encoding= 'utf-8') as f:
         User_Count = str(User_Count)
         Rating = bool(Rating)
         videojuegos.append(videojuego(Name, Platform, Year_of_Release, Genre, Publisher, NA_Sales, EU_Sales, JP_Sales, Other_Sales, Global_Sales, Critic_Score, Critic_Count, User_Score, User_Count, Rating))
-
+   
 
 def lee_ficheros(videojuegos):
     print(videojuegos)
