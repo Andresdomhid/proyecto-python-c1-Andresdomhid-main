@@ -19,9 +19,9 @@ def lee_datos(Nombre_fichero):
             Other_Sales = float(Listado[8])
             Global_Sales = float(Listado[9])
             Critic_Score = str(Listado[10])
-            Critic_Count = str(Listado[11])
+            Critic_Count = int(Listado[11])
             User_Score = str(Listado[12])
-            User_Count = str(Listado[13])
+            User_Count = int(Listado[13])
             Rating = bool(Listado[14]=='E')
             tupla = Videojuego(Name,Platform,Year_of_Release,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales,Critic_Score,Critic_Count,User_Score,User_Count,Rating)
             result.append(tupla)
@@ -42,12 +42,10 @@ def filtra_plataforma(Videojuegos):
 
 
 #SEGUNDA FUNCION
-def calcula_media_valoracion_por_juego(videojuegos, name):
+def calcula_media_valoracion_por_juego(videojuegos):
     result = []
     for videojuego in videojuegos:
-        if videojuego.Name == name:
             result.append(videojuego.Critic_Score)
-            result.append(videojuego.User_Score)
     return sum(result)//len(result)
 
 
