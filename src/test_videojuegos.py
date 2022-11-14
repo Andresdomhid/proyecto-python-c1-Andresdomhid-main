@@ -1,4 +1,4 @@
-from p2 import *
+from videojuegos import *
 
 #print(lee_datos('./data/Video_Game_Sales_as_of_Jan_2017.csv'))
 
