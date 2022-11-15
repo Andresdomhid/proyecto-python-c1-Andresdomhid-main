@@ -10,3 +10,4 @@ def test_media_valoracion_por_juegos():
     print(calcula_media_valoracion_por_juego(DATOS))
 
 test_media_valoracion_por_juegos()
+
