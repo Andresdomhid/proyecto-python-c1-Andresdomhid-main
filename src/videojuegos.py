@@ -18,11 +18,27 @@ def lee_datos(Nombre_fichero):
             JP_Sales = float(Listado[7])
             Other_Sales = float(Listado[8])
             Global_Sales = float(Listado[9])
-            Critic_Score = str(Listado[10])
-            Critic_Count = int(Listado[11])
-            User_Score = str(Listado[12])
-            User_Count = int(Listado[13])
-            Rating = bool(Listado[14]=='E')
+            if Listado[10]== '':
+                Critic_Score=0.0
+            else:
+                Critic_Score = float(Listado[10])
+            if Listado[11]== '':
+                Critic_Count=0
+            else:
+                Critic_Count = int(Listado[11])
+            if Listado[12]== '':
+                User_Score=0.0
+            else:
+                User_Score =float(Listado[12])
+            if Listado[13]== '':
+                User_Count=0
+            else:
+                User_Count = int(Listado[13])
+            if Listado[14]== '':
+                Rating=None
+            else:
+                Rating = bool(Listado[14]=='E')
+            
             tupla = Videojuego(Name,Platform,Year_of_Release,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales,Critic_Score,Critic_Count,User_Score,User_Count,Rating)
             result.append(tupla)
     return result
@@ -70,3 +86,4 @@ def agrupar_videojuegos_por_anyo(videojuegos):
         else:
             res[clave].append(videojuego)
     return res
+
