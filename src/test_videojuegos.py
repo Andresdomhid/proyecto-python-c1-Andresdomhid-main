@@ -8,5 +8,12 @@ DATOS = lee_datos('./data/Video_Game_Sales_as_of_Jan_2017.csv')
 
 def test_media_valoracion_por_juegos():
     print(lee_datos(DATOS))
-test_media_valoracion_por_juegos()
+
+def main():
+    test_media_valoracion_por_juegos()
+
+    
+if __name__ == '__main__':
+    main()
+
 
