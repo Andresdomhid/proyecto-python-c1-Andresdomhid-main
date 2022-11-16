@@ -3,10 +3,7 @@ from collections import namedtuple
 
 Videojuego = namedtuple('Videojuegos', 'Name,Platform,Year_of_Release,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales,Critic_Score,Critic_Count,User_Score,User_Count,Rating')
 
-def parse_nombre(nombre):
-    for a in nombre:
-        a.replace(',', ' ')
-    return a
+
 
 def lee_datos(Nombre_fichero):
     result = []
@@ -14,7 +11,7 @@ def lee_datos(Nombre_fichero):
         Lector = csv.reader(v, delimiter=";")
         next(Lector)
         for Listado in Lector:
-            Name = parse_nombre(Listado[0])
+            Name = Listado[0]
             Platform = str(Listado[1])
             if Listado[2]== '':
                 Year_of_Release=0
@@ -74,18 +71,20 @@ def lee_datos(Nombre_fichero):
 def filtra_plataforma(Videojuegos):
     result = []
     for Videojuego in Videojuegos:
-        if Videojuego.Platform == 'Wii':
+        if Videojuego.Rating == True:
             muestra = (Videojuego.Name)
             result.append(muestra)
-    return 'Los juegos para Wii son:', result
+    return 'Los juegos para todas las edades son:', result
 
 
 
 #SEGUNDA FUNCION
-def calcula_media_valoracion_por_juego(videojuegos):
+def calcula_media_valoracion_por_juego(videojuegos, name):
     result = []
     for videojuego in videojuegos:
-        result.append(videojuego.Critic_Score)
+        if videojuego.Name == name:
+            result.append(videojuego.Critic_Score)
+            result.append(videojuego.User_Score)
     return sum(result)//len(result)
 
 
