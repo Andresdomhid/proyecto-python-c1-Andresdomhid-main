@@ -2,22 +2,46 @@ import csv
 from collections import namedtuple
 
 Videojuego = namedtuple('Videojuegos', 'Name,Platform,Year_of_Release,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales,Critic_Score,Critic_Count,User_Score,User_Count,Rating')
+
+def parse_nombre(nombre):
+    for a in nombre:
+        a.replace(',', ' ')
+    return a
+
 def lee_datos(Nombre_fichero):
     result = []
-    with open(Nombre_fichero) as v:
-        Lector = csv.reader(v)
+    with open(Nombre_fichero,encoding="utf-8") as v:
+        Lector = csv.reader(v, delimiter=";")
         next(Lector)
         for Listado in Lector:
-            Name = str(Listado[0])
+            Name = parse_nombre(Listado[0])
             Platform = str(Listado[1])
-            Year_of_Release = Listado[2]
+            if Listado[2]== '':
+                Year_of_Release=0
+            else:
+                Year_of_Release = int(Listado[2])
             Genre = str(Listado[3])
             Publisher = str(Listado[4])
-            NA_Sales = float(Listado[5])
-            EU_Sales = float(Listado[6])
-            JP_Sales = float(Listado[7])
-            Other_Sales = float(Listado[8])
-            Global_Sales = float(Listado[9])
+            if Listado[5]== '':
+                NA_Sales=0.0
+            else:
+                NA_Sales= float(Listado[5])
+            if Listado[6]== '':
+                EU_Sales=0.0
+            else:
+                EU_Sales = float(Listado[6])
+            if Listado[7]== '':
+                JP_Sales=0.0
+            else:
+                JP_Sales = float(Listado[7])
+            if Listado[8]== '':
+                Other_Sales=0.0
+            else:
+                Other_Sales = float(Listado[8])
+            if Listado[9]== '':
+                Global_Sales=0.0
+            else:
+                Global_Sales = float(Listado[9])
             if Listado[10]== '':
                 Critic_Score=0.0
             else:
