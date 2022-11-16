@@ -10,7 +10,7 @@ def parse_nombre(nombre):
 
 def lee_datos(Nombre_fichero):
     result = []
-    with open(Nombre_fichero,encoding="utf-8") as v:
+    with open(Nombre_fichero, encoding= "utf-8") as v:
         Lector = csv.reader(v, delimiter=";")
         next(Lector)
         for Listado in Lector:
