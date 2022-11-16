@@ -10,8 +10,11 @@ def test_filtra_plataforma():
 def test_media_valoracion_por_juegos():
     print(calcula_media_valoracion_por_juego(DATOS, 'Wii Sports'))
 
+def test_agrupa_videojuegos_por_anyo():
+    print(agrupar_videojuegos_por_anyo(DATOS))
+
 def main():
-    test_media_valoracion_por_juegos()
+   test_agrupa_videojuegos_por_anyo()
 
 
 if __name__ == '__main__':

@@ -87,23 +87,24 @@ def calcula_media_valoracion_por_juego(videojuegos, name):
             result.append(videojuego.User_Score)
     return sum(result)//len(result)
 
+### CALCULA LA VALORACION MEDIA ENTRE LOS USUARIOS Y LOS CRITICOS DEL JUEGO SELECCIONADO ###
+
 
 
 
 #TERCERA FUNCION
-def valor_maximo_ventas_juegos_PS3(videojuegos, Platform):
+def valor_maximo_ventas_juegos_por_Plataforma(videojuegos, plataforma):
     result = []
-    #for videojuego in videojuegos:
-        #if videojuego.Platform == 'PS3':
-            #calculado = 
-
+    for videojuego in videojuegos:
+        if videojuego.Platform == plataforma:
+            pass
 
 
 #CUARTA FUNCION
 def agrupar_videojuegos_por_anyo(videojuegos):
     res = dict()
     for videojuego in videojuegos:
-        clave = videojuego.Year_of_Release(2004)
+        clave = videojuego.Year_of_Release()
         if clave not in res:
             res[clave] = [videojuego]
         else:
