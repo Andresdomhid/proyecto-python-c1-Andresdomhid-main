@@ -85,7 +85,7 @@ def filtra_plataforma(Videojuegos):
 def calcula_media_valoracion_por_juego(videojuegos):
     result = []
     for videojuego in videojuegos:
-            result.append(videojuego.Critic_Score)
+        result.append(videojuego.Critic_Score)
     return sum(result)//len(result)
 
 
