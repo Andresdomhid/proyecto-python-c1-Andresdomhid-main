@@ -1,5 +1,5 @@
 import csv
-from collections import namedtuple
+from collections import namedtuple,defaultdict
 
 Videojuego = namedtuple('Videojuegos', 'Name,Platform,Year_of_Release,Genre,Publisher,NA_Sales,EU_Sales,JP_Sales,Other_Sales,Global_Sales,Critic_Score,Critic_Count,User_Score,User_Count,Rating')
 
@@ -93,12 +93,12 @@ def calcula_media_valoracion_por_juego(videojuegos, name):
 
 
 #TERCERA FUNCION
-def valor_maximo_ventas_juegos_por_Plataforma(videojuegos, plataforma):
-    result = []
+def valor_maximo_ventas_juegos_por_Plataforma(videojuegos):
+    result = defaultdict(float)
     for videojuego in videojuegos:
-        if videojuego.Platform == plataforma:
-            pass
-
+        if result[(videojuego.Name,videojuego.Platform)]<videojuego.Global_Sales:
+            result[(videojuego.Name, videojuego.Platform)]= videojuego.Global_Sales
+    return result
 
 #CUARTA FUNCION
 def agrupar_videojuegos_por_anyo(videojuegos):

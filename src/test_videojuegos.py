@@ -13,8 +13,12 @@ def test_media_valoracion_por_juegos():
 def test_agrupa_videojuegos_por_anyo():
     print(agrupar_videojuegos_por_anyo(DATOS))
 
+def test_valor_maximo_ventas_juegos_por_Plataforma():
+    print(valor_maximo_ventas_juegos_por_Plataforma(DATOS))
+    print()
+
 def main():
-   test_agrupa_videojuegos_por_anyo()
+   test_valor_maximo_ventas_juegos_por_Plataforma()
 
 
 if __name__ == '__main__':
