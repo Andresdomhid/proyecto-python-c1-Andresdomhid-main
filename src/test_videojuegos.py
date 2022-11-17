@@ -14,7 +14,7 @@ def test_agrupa_videojuegos_por_anyo():
     print(agrupar_videojuegos_por_anyo(DATOS))
 
 def test_valor_maximo_ventas_juegos_por_Plataforma():
-    print(valor_maximo_ventas_juegos_por_Plataforma(DATOS))
+    print(valor_maximo_ventas_juegos_por_Plataforma(DATOS, 'Wii'))
     print()
 
 def main():
