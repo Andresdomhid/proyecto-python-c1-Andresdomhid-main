@@ -93,11 +93,12 @@ def calcula_media_valoracion_por_juego(videojuegos, name):
 
 
 #TERCERA FUNCION
-def valor_maximo_ventas_juegos_por_Plataforma(videojuegos):
+def valor_maximo_ventas_juegos_por_Plataforma(videojuegos, plataforma):
     result = defaultdict(float)
     for videojuego in videojuegos:
-        if result[(videojuego.Name,videojuego.Platform)]<videojuego.Global_Sales:
-            result[(videojuego.Name, videojuego.Platform)]= videojuego.Global_Sales
+        if videojuego.Platform == plataforma:
+            if result[(videojuego.Name,videojuego.Platform)]<videojuego.Global_Sales:
+                result[(videojuego.Name, videojuego.Platform)]= videojuego.Global_Sales
     return result
 
 #CUARTA FUNCION
