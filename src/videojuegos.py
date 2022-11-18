@@ -68,7 +68,7 @@ def lee_datos(Nombre_fichero):
 
 
 #PRIMERA FUNCION
-def filtra_plataforma(Videojuegos):
+def filtra_clasificcion_por_edades(Videojuegos):
     result = []
     for Videojuego in Videojuegos:
         if Videojuego.Rating == True:
@@ -101,14 +101,17 @@ def valor_maximo_ventas_juegos_por_Plataforma(videojuegos, plataforma):
                 result[(videojuego.Name, videojuego.Platform)]= videojuego.Global_Sales
     return result
 
+
+
 #CUARTA FUNCION
-def agrupar_videojuegos_por_anyo(videojuegos):
+def agrupar_videojuegos_por_anyo(videojuegos, year):
     res = dict()
     for videojuego in videojuegos:
-        clave = videojuego.Year_of_Release()
-        if clave not in res:
-            res[clave] = [videojuego]
-        else:
-            res[clave].append(videojuego)
+        if videojuego.Year_of_Release == year:
+            clave = videojuego.Year_of_Release()
+            if clave not in res:
+                res[clave] = [videojuego]
+            else:
+                res[clave].append(videojuego.Name)
     return res
 
