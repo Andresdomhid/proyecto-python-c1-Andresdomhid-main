@@ -102,10 +102,27 @@ def valor_maximo_ventas_juegos_por_Plataforma(videojuegos, plataforma):
     return result
 
 
+def maximo_ventas_por_plataforma(videojuegos):
+    
+    lista_plataforma_venta = [(videojuego.Year_of_Release, videojuego.Platform) for videojuego in videojuegos]
+    lista_ordenada = sorted(lista_plataforma_venta, key= lambda x:x[1])
+    return dict(lista_ordenada)
+
+
+
+def maximo_ventas_por_plataforma2(videojuegos):
+    result = []
+    for videojuego in videojuegos:
+        calculado = (videojuego.Platform, videojuego.Name, videojuego.Year_of_Release, videojuego.Global_Sales)
+        result.append(calculado)
+        result = sorted(result, reverse=True, key= lambda x:x[1])
+    return result
+
+
 
 #CUARTA FUNCION
 def agrupar_videojuegos_por_anyo(videojuegos, year):
-    res = dict()
+    res = [dict()]
     for videojuego in videojuegos:
         if videojuego.Year_of_Release == year:
             clave = videojuego.Year_of_Release()
