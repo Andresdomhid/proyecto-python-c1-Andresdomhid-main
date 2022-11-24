@@ -27,11 +27,11 @@ def test_maximo_ventas_por_plataforma():
     print(maximo_ventas_por_plataforma(DATOS))
 
 
-def test_maximo_ventas_por_plataforma2():
-    print(maximo_ventas_por_plataforma2(DATOS))
+def test_maximo_ventas_por_anyo_y_plataforma():
+    print(maximo_ventas_por_anyo_y_plataforma(DATOS))
 
 def main():
-   test_maximo_ventas_por_plataforma2()
+   test_valor_maximo_ventas_juegos_por_Plataforma()
 
 
 if __name__ == '__main__':
