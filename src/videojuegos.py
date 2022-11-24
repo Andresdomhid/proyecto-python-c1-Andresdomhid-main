@@ -93,6 +93,17 @@ def calcula_media_valoracion_por_juego(videojuegos, name):
 
 
 #TERCERA FUNCION
+def valor_maximo_ventas_juegos_por_anyo(videojuegos, anyo):
+    result = []
+    for videojuego in videojuegos:
+        if videojuego.Year_of_Release == anyo:
+            calculado = (videojuego.Year_of_Release, videojuego.Name, videojuego.Platform, videojuego.Global_Sales)
+            result.append(calculado)
+            result = sorted(result, reverse = True, key = lambda x:x[3])
+    return result[0]
+
+
+
 def valor_maximo_ventas_juegos_por_Plataforma(videojuegos, plataforma):
     result = defaultdict(float)
     for videojuego in videojuegos:
@@ -122,6 +133,8 @@ def maximo_ventas_por_anyo_y_plataforma(videojuegos):
 
 
 
+
+
 #CUARTA FUNCION
 def agrupar_videojuegos_por_anyo(videojuegos, year):
     res = dict()
@@ -136,3 +149,50 @@ def agrupar_videojuegos_por_anyo(videojuegos, year):
 
 
 
+def agrupar_juegos_por_genero(videojuegos, genero):
+    result = defaultdict(list)
+    for videojuego in videojuegos:
+        if Videojuego.Genre == genero:
+            result[videojuego.Genre].append(videojuego.Name)
+    return result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def valor_maximo_ventas_juegos_por_Plataforma(videojuegos, plataforma):
+    result = defaultdict(float)
+    for videojuego in videojuegos:
+        if videojuego.Platform == plataforma:
+            if result[(videojuego.Name,videojuego.Platform)]<videojuego.Global_Sales:
+                result[(videojuego.Name, videojuego.Platform)]= videojuego.Global_Sales
+            else:
+                result[(videojuego.Name, videojuego.Platform)]=result[(videojuego.Name, videojuego.Platform)]
+    return result
+
+
+def maximo_ventas_por_plataforma(videojuegos):
+    
+    lista_plataforma_venta = [(videojuego.Year_of_Release, videojuego.Platform) for videojuego in videojuegos]
+    lista_ordenada = sorted(lista_plataforma_venta, key= lambda x:x[1])
+    return dict(lista_ordenada)
+
+
+
+def maximo_ventas_por_anyo_y_plataforma(videojuegos):
+    result = []
+    for videojuego in videojuegos:
+        calculado = (videojuego.Platform, videojuego.Name, videojuego.Year_of_Release, videojuego.Global_Sales)
+        result.append(calculado)
+        result = sorted(result, reverse=True, key= lambda x:x[2])
+    return result
