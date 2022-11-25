@@ -5,7 +5,7 @@ def test_lee_datos():
     print(DATOS)
 
 #TEST 1#
-def test_filtra_clasificcion_por_edades():
+'''def test_filtra_clasificcion_por_edades():
     print(filtra_clasificcion_por_edades(DATOS))
 
 #TEST2#
@@ -36,19 +36,19 @@ def test_maximo_ventas_por_plataforma():
 
 
 def test_maximo_ventas_por_anyo_y_plataforma():
-    print(maximo_ventas_por_anyo_y_plataforma(DATOS))
+    print(maximo_ventas_por_anyo_y_plataforma(DATOS))'''
 ###############################################################################################################################
 
 
 
 
-def test_agrupar_juegos_por_genero():
-    print(agrupar_juegos_por_genero(DATOS, 'Fighting'))
+def test_agrupa_por_genero(DATOS, accion):
+    print(agrupa_por_genero(DATOS, accion))
 
 
 
 def main():
-  test_agrupar_juegos_por_genero()
+  test_agrupa_por_genero(DATOS, "Sports")
 
 
 if __name__ == '__main__':
