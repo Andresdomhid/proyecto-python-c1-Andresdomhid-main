@@ -36,7 +36,7 @@ def test_maximo_ventas_por_anyo_y_plataforma():
 
 
 
-
+#TEST4#
 def test_agrupa_por_genero(DATOS, accion):
     print(agrupa_por_genero(DATOS, accion))
 
